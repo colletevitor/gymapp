@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             left: '50%',
             transform: 'translateX(-50%)',
             background: 'var(--accent)',
-            color: '#0f0f0f',
+            color: 'var(--accent-text, #0f0f0f)',
             borderRadius: '99px',
             padding: '10px 20px',
             fontWeight: 700,
@@ -43,7 +43,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             boxShadow: '0 0 20px #c8f13550',
           }}
         >
-          <span style={{ width: 8, height: 8, borderRadius: '50%', background: '#0f0f0f', animation: 'pulse 1.5s infinite' }} />
+          <span style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--accent-text, #0f0f0f)', animation: 'pulse 1.5s infinite' }} />
           Treino em andamento
         </NavLink>
       )}
