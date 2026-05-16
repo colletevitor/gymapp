@@ -120,18 +120,13 @@ export default function ActiveWorkout() {
             <p style={{ fontSize: 12, color: 'var(--text2)', marginBottom: 2 }}>{activeSession.templateName}</p>
             <Stopwatch startTime={activeSession.date} />
           </div>
-          <div style={{ display: 'flex', gap: 8 }}>
-            <button
-              className="btn btn-ghost btn-sm"
-              onClick={() => { if (confirm('Cancelar treino?')) { cancelSession(); navigate('/') } }}
-              style={{ color: 'var(--red)', borderColor: '#ff444433' }}
-            >
-              <X size={14} /> Cancelar
-            </button>
-            <button className="btn btn-primary btn-sm" onClick={() => setShowFinish(true)}>
-              <Check size={14} /> Finalizar
-            </button>
-          </div>
+          <button
+            className="btn btn-ghost btn-sm"
+            onClick={() => { if (confirm('Cancelar treino?')) { cancelSession(); navigate('/') } }}
+            style={{ color: 'var(--red)', borderColor: '#ff444433' }}
+          >
+            <X size={14} /> Cancelar
+          </button>
         </div>
         <div className="progress-bar">
           <div className="progress-fill" style={{ width: `${progress}%` }} />
@@ -142,7 +137,7 @@ export default function ActiveWorkout() {
       </div>
 
       {/* Exercises */}
-      <div style={{ padding: '16px', paddingBottom: 100, overflowY: 'auto', flex: 1 }}>
+      <div style={{ padding: '16px', paddingBottom: 40, overflowY: 'auto', flex: 1 }}>
         {activeSession.exercises.map((ex, exIdx) => {
           const exercise = getExercise(ex.exerciseId)
           const allDone = ex.sets.every(s => s.done) && ex.sets.length > 0
@@ -215,6 +210,14 @@ export default function ActiveWorkout() {
             </div>
           )
         })}
+
+        <button
+          className="btn btn-primary btn-full"
+          style={{ marginTop: 8, marginBottom: 16, padding: '16px', fontSize: 16 }}
+          onClick={() => setShowFinish(true)}
+        >
+          <Check size={18} /> Finalizar Treino
+        </button>
       </div>
 
       {/* Finish modal */}
