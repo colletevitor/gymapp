@@ -14,6 +14,7 @@
   --text2: #888888;
   --text3: #555555;
   --accent: #c8f135;
+  --accent-text: #0f0f0f;
   --accent2: #a8d120;
   --red: #ff4444;
   --blue: #4488ff;
@@ -144,7 +145,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .btn-primary {
   background: var(--accent);
-  color: #0f0f0f;
+  color: var(--accent-text, #0f0f0f);
   font-weight: 700;
 }
 
@@ -360,7 +361,7 @@ input[type="number"]::-webkit-inner-spin-button {
 .set-done.checked {
   background: var(--accent);
   border-color: var(--accent);
-  color: #0f0f0f;
+  color: var(--accent-text, #0f0f0f);
 }
 
 /* Stat cards */
